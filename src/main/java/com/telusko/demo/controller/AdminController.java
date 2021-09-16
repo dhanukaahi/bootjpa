@@ -3,6 +3,7 @@ package com.telusko.demo.controller;
 
 import com.telusko.demo.dao.AdminRepo;
 import com.telusko.demo.model.Admin;
+import org.graalvm.compiler.hotspot.replacements.Log;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,12 +36,13 @@ public class AdminController {
         Admin admin = repo.getOne(id);
         repo.delete(admin);
 
-        return "Deleted Susess";
+        return "Deleted Sucsess";
     }
 
     @GetMapping("/admins")
     public List<Admin> getAdmin()
     {
+
         return repo.findAll();
 
 
